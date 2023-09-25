@@ -8,17 +8,22 @@ import Sidebar from './sidebar/sidebar';
 import { Route, Routes } from 'react-router-dom';
 const defaultTheme = createTheme();
 
-const TaxDocuments = React.lazy(
-  () => import('./tax-documents/tax-documents/tax-documents')
+const TaxDocuments = React.lazy(() =>
+  // @ts-ignore
+  import('tax-documents/Module').then((m) => {
+    return {
+      default: m.TaxDocuments,
+    };
+  })
 );
 const AccountsSummary = React.lazy(
-  () => import('./accounts-summary/accounts-summary')
+  // @ts-ignore
+  () => import('accounts-summary/Module')
 );
 const CreditCardAccountDetails = React.lazy(
   () =>
-    import(
-      './credit-card/credit-card-account-details/credit-card-account-details'
-    )
+    // @ts-ignore
+    import('credit-card/Module')
 );
 
 function Dashboard() {

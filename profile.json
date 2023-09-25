@@ -1,0 +1,100 @@
+[
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 82971,
+    "tid": 0,
+    "ts": 0,
+    "args": {
+      "name": "Group #1"
+    }
+  },
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 82971,
+    "tid": 1,
+    "ts": 0,
+    "args": {
+      "name": "Group #2"
+    }
+  },
+  {
+    "name": "accounts-summary:build:development",
+    "cat": "accounts-summary,build,development",
+    "ph": "X",
+    "ts": 1695656195284000,
+    "dur": 11834000,
+    "pid": 82971,
+    "tid": 0,
+    "args": {
+      "target": {
+        "project": "accounts-summary",
+        "target": "build",
+        "configuration": "development"
+      },
+      "status": "success"
+    }
+  },
+  {
+    "name": "thread_name",
+    "ph": "M",
+    "pid": 82971,
+    "tid": 2,
+    "ts": 0,
+    "args": {
+      "name": "Group #3"
+    }
+  },
+  {
+    "name": "tax-documents:build:development",
+    "cat": "tax-documents,build,development",
+    "ph": "X",
+    "ts": 1695656195284000,
+    "dur": 14720000,
+    "pid": 82971,
+    "tid": 1,
+    "args": {
+      "target": {
+        "project": "tax-documents",
+        "target": "build",
+        "configuration": "development"
+      },
+      "status": "success"
+    }
+  },
+  {
+    "name": "credit-card:build:development",
+    "cat": "credit-card,build,development",
+    "ph": "X",
+    "ts": 1695656207118000,
+    "dur": 6068000,
+    "pid": 82971,
+    "tid": 2,
+    "args": {
+      "target": {
+        "project": "credit-card",
+        "target": "build",
+        "configuration": "development"
+      },
+      "status": "success"
+    }
+  },
+  {
+    "name": "nxconf-demo2023:build:development",
+    "cat": "nxconf-demo2023,build,development",
+    "ph": "X",
+    "ts": 1695656213186000,
+    "dur": 9158000,
+    "pid": 82971,
+    "tid": 0,
+    "args": {
+      "target": {
+        "project": "nxconf-demo2023",
+        "target": "build",
+        "configuration": "development"
+      },
+      "status": "success"
+    }
+  }
+]

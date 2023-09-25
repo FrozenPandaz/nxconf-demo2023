@@ -9,6 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
+        "outputHashing": "none",
         "compiler": "babel",
         "outputPath": "dist/nxconf-demo2023",
         "index": "src/index.html",
@@ -19,7 +20,7 @@
         "styles": [],
         "scripts": [],
         "isolatedConfig": true,
-        "webpackConfig": "webpack.config.js"
+        "webpackConfig": "webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -44,13 +45,32 @@
         }
       }
     },
-    "serve": {
+    "serve-no-mf": {
       "executor": "@nx/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "nxconf-demo2023:build",
         "hmr": true,
         "proxyConfig": "./proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nxconf-demo2023:build:development"
+        },
+        "production": {
+          "buildTarget": "nxconf-demo2023:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nxconf-demo2023:build",
+        "proxyConfig": "./proxy.conf.json",
+        "hmr": true,
+        "port": 4200
       },
       "configurations": {
         "development": {
@@ -90,5 +110,6 @@
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["tax-documents", "accounts-summary", "credit-card"]
 }
