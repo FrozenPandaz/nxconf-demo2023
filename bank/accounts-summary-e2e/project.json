@@ -1,0 +1,33 @@
+{
+  "name": "accounts-summary-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "bank/accounts-summary-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "bank/accounts-summary-e2e/cypress.config.ts",
+        "devServerTarget": "accounts-summary:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "accounts-summary:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "accounts-summary:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["bank/accounts-summary-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["accounts-summary"]
+}
